@@ -21,8 +21,8 @@ module.exports = {
     extensions: ['', '.js'],
   },
   output: {
-    filename: 'dash-shaka-playback.js',
-    library: 'DashShakaPlayback',
+    filename: 'streamroot-playback.js',
+    library: 'StreamrootPlayback',
     libraryTarget: 'umd',
   },
 };
