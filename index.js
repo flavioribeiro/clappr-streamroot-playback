@@ -4,7 +4,6 @@ export default class StreamrootPlayback extends HLS {
   get name() {return 'streamroot_playback'}
 
   setupHls() {
-    console.warn("Setting up HLS with", this.options.hlsjsConfig, this.options.hlsjsConfig.p2pConfig)
     this.hls = new window.Hls(this.options.hlsjsConfig, this.options.hlsjsConfig.p2pConfig)
     this.hls.on(Hls.Events.MEDIA_ATTACHED, () => this.hls.loadSource(this.options.src))
     this.hls.on(Hls.Events.LEVEL_LOADED, (evt, data) => this.updatePlaybackType(evt, data))
@@ -16,6 +15,4 @@ export default class StreamrootPlayback extends HLS {
   }
 }
 
-StreamrootPlayback.canPlay = (resource, mimeType = '') => {
-    return HLS.canPlay(resource, mimeType)
-}
+StreamrootPlayback.canPlay = HLS.canPlay
