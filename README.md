@@ -1,4 +1,4 @@
-### Clappr Playback Plugin for Streamroot.io
+# Clappr Playback Plugin for Streamroot.io
 
 ## Building
 
