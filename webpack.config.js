@@ -21,7 +21,7 @@ module.exports = {
     extensions: ['', '.js'],
   },
   output: {
-    filename: 'streamroot-playback.js',
+    filename: 'public/streamroot-playback.js',
     library: 'StreamrootPlayback',
     libraryTarget: 'umd',
   },
