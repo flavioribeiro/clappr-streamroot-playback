@@ -1,7 +1,7 @@
 {
   "name": "clappr-streamroot-hlsjs",
   "version": "1.0.0",
-  "description": "clappr plugin for streamroot.io",
+  "description": "clappr plugin for streamroot.io integrated with hls.js",
   "main": "index.js",
   "repository": {
     "type": "git",
