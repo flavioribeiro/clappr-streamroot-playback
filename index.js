@@ -1,6 +1,6 @@
 import {HLS} from 'clappr'
 
-export default class StreamrootPlayback extends HLS {
+export default class StreamrootHlsjs extends HLS {
   get name() {return 'streamroot_playback'}
 
   setupHls() {
@@ -15,4 +15,4 @@ export default class StreamrootPlayback extends HLS {
   }
 }
 
-StreamrootPlayback.canPlay = HLS.canPlay
+StreamrootHlsjs.canPlay = HLS.canPlay

@@ -1,5 +1,5 @@
 {
-  "name": "clappr-streamroot-playback",
+  "name": "clappr-streamroot-hlsjs",
   "version": "1.0.0",
   "description": "clappr plugin for streamroot.io",
   "main": "index.js",

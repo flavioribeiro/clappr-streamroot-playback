@@ -1,2 +1,2 @@
 node_modules
-public/streamroot-playback.js
+dist/streamroot-hls.js
