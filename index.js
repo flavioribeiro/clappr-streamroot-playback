@@ -1,18 +1,20 @@
 import {HLS} from 'clappr'
 
-export default class StreamrootPlayback extends HLS {
+export default class StreamrootHlsjs extends HLS {
   get name() {return 'streamroot_playback'}
 
-  setupHls() {
-    this.hls = new window.Hls(this.options.hlsjsConfig || {}, this.options.p2pConfig)
-    this.hls.on(Hls.Events.MEDIA_ATTACHED, () => this.hls.loadSource(this.options.src))
-    this.hls.on(Hls.Events.LEVEL_LOADED, (evt, data) => this.updatePlaybackType(evt, data))
-    this.hls.on(Hls.Events.LEVEL_UPDATED, (evt, data) => this.onLevelUpdated(evt, data))
-    this.hls.on(Hls.Events.LEVEL_SWITCH, (evt,data) => this.onLevelSwitch(evt, data))
-    this.hls.on(Hls.Events.FRAG_LOADED, (evt, data) => this.onFragmentLoaded(evt, data))
-    this.hls.on(Hls.Events.ERROR, (evt, data) => this.onError(evt, data))
-    this.hls.attachMedia(this.el)
+  _setupHls() {
+    this._hls = new window.Hls(this._options.hlsjsConfig || {}, this._options.p2pConfig)
+    this._hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+        this._hls.loadSource(this._options.src)
+    });
+    this._hls.on(Hls.Events.LEVEL_LOADED, (evt, data) => this._updatePlaybackType(evt, data))
+    this._hls.on(Hls.Events.LEVEL_UPDATED, (evt, data) => this._onLevelUpdated(evt, data))
+    this._hls.on(Hls.Events.LEVEL_SWITCH, (evt,data) => this._onLevelSwitch(evt, data))
+    this._hls.on(Hls.Events.FRAG_LOADED, (evt, data) => this._onFragmentLoaded(evt, data))
+    this._hls.on(Hls.Events.ERROR, (evt, data) => this._onHLSJSError(evt, data))
+    this._hls.attachMedia(this.el)
   }
 }
 
-StreamrootPlayback.canPlay = HLS.canPlay
+StreamrootHlsjs.canPlay = HLS.canPlay

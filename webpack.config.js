@@ -21,8 +21,8 @@ module.exports = {
     extensions: ['', '.js'],
   },
   output: {
-    filename: 'public/streamroot-playback.js',
-    library: 'StreamrootPlayback',
+    filename: 'dist/streamroot-hls.js',
+    library: 'StreamrootHlsjs',
     libraryTarget: 'umd',
   },
 };
